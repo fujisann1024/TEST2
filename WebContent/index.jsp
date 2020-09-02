@@ -27,7 +27,7 @@ int age = 23;
 <p>私の名前は<%= name %>。年齢は<%= age %>歳です</p>
 <p><%= today %>の運勢は「<%= luck %>」です</p>
 
-<form action = "/WebSample/FormSampleServket" method="get">
+<form action = "/WebSample/SampleServket" method="get">
 名前:<input type = "text" name = "name">
 男:<input type = "radio" name = "gender" value = "0">
 女:<input type = "radio" name = "gender" value = "1"><br>
