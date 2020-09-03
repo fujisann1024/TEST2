@@ -68,8 +68,10 @@ public class FormSampleServlet extends HttpServlet {
 		//Content-Typeの設定後に記述
 		//HTMLの出力
 		PrintWriter out = response.getWriter();
+		 out.println("<!DOCTYPE html>");
 		 out.println("<html>");
 		 out.println("<head>");
+		 out.println("<meta charset=\"UTF-8\">");
 		 out.println("<title>ユーザー登録結果</title>");
 		 out.println("</head>");
 		 out.print("<body>");

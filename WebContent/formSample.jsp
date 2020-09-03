@@ -7,7 +7,7 @@
 <title>ユーザー登録もどき</title>
 </head>
 <body>
-<form action = "/WebSample/FormSampleServket" method="post">
+<form action = "/WebSample/FormSampleServlet" method="post">
 名前:<br>
 <input type = "text" name = "name"><br>
 性別:<br>
