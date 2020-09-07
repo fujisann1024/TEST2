@@ -25,6 +25,7 @@ public class ForwardSampleServlet extends HttpServlet {
 	HttpServletResponse response) throws ServletException, IOException {
 
 	response.getWriter().append("Served at: ").append(request.getContextPath());
+
 		RequestDispatcher dispatcher =
 		request.getRequestDispatcher("/WEB-INF/jsp/forwardSample.jsp");
 				dispatcher.forward(request, response);

@@ -1,14 +1,14 @@
 package model;//クラスはpublicでパッケージに所属する
 
 import java.io.Serializable;
-//Seriakizableインターフェースを実装する
+//Serializableインターフェースを実装する
 public class Human implements Serializable {
 	//フィールドはカプセル化する
 	private String name;
 	private int age;
 	//publicで引数のないコンストラクタを持つ
 	public Human() {}
-	
+
 	public Human(String name, int age) {
 		this.name = name;
 		this.age = age;
@@ -29,6 +29,6 @@ public class Human implements Serializable {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
-	
+
+
 }
