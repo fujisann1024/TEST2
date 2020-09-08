@@ -19,6 +19,6 @@ Health health = (Health) request.getAttribute("health");
 	BMI:<%= health.getBmi() %><br>
 	体型:<%= health.getBodyType() %>>
 	</p>
-	<a href = "/example/HealthCheck">戻る</a>
+	<a href = "/WebSample/HealthCheck">戻る</a>
 </body>
 </html>

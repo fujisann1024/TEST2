@@ -9,9 +9,9 @@
 <body>
 <h1>スッキリ健康診断</h1>
 <form action = "/WebSample/HealthCheck" method = "post" >
-height:<input type = "text" name = "height">
-weight:<input type = "text" name = "weight">
-<input type = "submit" value = "judgment">
+身長:<input type = "text" name = "height"><br>
+体重:<input type = "text" name = "weight"><br>
+<input type = "submit" value = "診断">
 </form>
 </body>
 </html>

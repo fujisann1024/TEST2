@@ -37,7 +37,7 @@ public class ServletSample extends HttpServlet {
 		SimpleDateFormat sdf = new SimpleDateFormat("MM月dd日");
 		String today = sdf.format(date);
 
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+
 		//Content-Typeヘッダの設定
 		response.setContentType("text/html; charset=UTF-8");//HTMLを出力する場合
 		//Content-Typeの設定後に記述

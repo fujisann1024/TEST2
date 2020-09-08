@@ -23,7 +23,7 @@ public class ForwardSampleServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request,
 	HttpServletResponse response) throws ServletException, IOException {
-
+	response.setContentType("text/html; charset=UTF-8");
 	response.getWriter().append("Served at: ").append(request.getContextPath());
 
 		RequestDispatcher dispatcher =
