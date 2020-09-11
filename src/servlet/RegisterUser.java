@@ -29,7 +29,7 @@ public class RegisterUser extends HttpServlet {
 	HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html; charset=UTF-8");
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+
 		//フォワード先
 		String forwardPath = null;
 
@@ -41,10 +41,8 @@ public class RegisterUser extends HttpServlet {
 		if(action == null ) {
 			//フォワード先を設定
 			forwardPath = "/WEB-INF/jsp/registerForm.jsp";
-		}
 
-		//登録画面から「登録実行」をリクエストされたときの実行
-		else if (action.equals("done")) {
+		}else if (action.equals("done")) {//登録画面から「登録実行」をリクエストされたときの実行
 			//セッションスコープに保存された登録ユーザーを取得
 			HttpSession session = request.getSession();
 			User registerUser = (User) session.getAttribute("registerUser");
@@ -57,19 +55,39 @@ public class RegisterUser extends HttpServlet {
 			session.removeAttribute("registerUser");
 
 			//登録後のフォワード先を設定
-			forwardPath = "/WEB-INF/jsp/register/Done.jsp";
+			forwardPath = "/WEB-INF/jsp/registerDone.jsp";
 		}
 
 		//設定されたフォワード先にフォワード
-		RequestDispatcher dispatcher = request.getRequestDispatcher(forwardPath);
+		RequestDispatcher dispatcher =
+		request.getRequestDispatcher(forwardPath);
+		dispatcher.forward(request, response);
 
 	}
 
 
 	protected void doPost(HttpServletRequest request,
 	HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+
+		//リクエストパラメータの取得
+		request.setCharacterEncoding("UTF-8");
+		String id = request.getParameter("id");
+		String name = request.getParameter("name");
+		String pass = request.getParameter("pass");
+
+		//登録するユーザーの情報を設定
+		User registerUser = new User(id,name,pass);
+
+		//セッションスコープに登録ユーザーを保存
+		HttpSession session = request.getSession();
+		session.setAttribute("registerUser", registerUser);
+
+		//フォワード
+		RequestDispatcher dispatcher =
+		request.getRequestDispatcher("/WEB-INF/jsp/registerConfirm.jsp");
+		dispatcher.forward(request,response);
+
+
 	}
 
 }
