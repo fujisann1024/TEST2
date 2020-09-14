@@ -17,6 +17,6 @@ User registerUser = (User) session.getAttribute("registerUser");
 名前:<%= registerUser.getName() %><br>
 </p>
 <a href = "/WebSample/RegisterUser">戻る</a>|
-<a href = "/WebSample/RegisterUser/?action=done">登録</a>
+<a href = "/WebSample/RegisterUser?action=done">登録</a>
 </body>
 </html>
